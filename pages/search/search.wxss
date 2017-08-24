@@ -37,8 +37,8 @@ page{
     position: absolute;
     top: 14rpx;
     left: 20rpx;
-    width: 31rpx;
-    height: 31rpx;
+    width: 45rpx;
+    height: 45rpx;
 }
 
 .search-header .del{

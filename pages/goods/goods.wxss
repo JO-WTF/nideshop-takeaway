@@ -485,8 +485,9 @@
 }
 
 .related-goods .item .img{
-  width: 311.45rpx;
+  width: 100%;
   height: 311.45rpx;
+  margin: auto;
 }
 
 .related-goods .item .name{
@@ -509,6 +510,13 @@
   color: #b4282d;
 }
 
+.icon{
+    display: block;
+    height: 65rpx;
+    width: 65rpx;
+    float: right;
+    padding:0 10px 10px 0;
+}
 .bottom-btn{
     position: fixed;
     left:0;
@@ -571,8 +579,8 @@
 
 .bottom-btn .l .icon{
     display: block;
-    height: 44rpx;
-    width: 44rpx;
+    height: 55rpx;
+    width: 55rpx;
 }
 
 

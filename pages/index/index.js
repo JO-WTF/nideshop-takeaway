@@ -18,8 +18,8 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: 'NideShop',
-      desc: '仿网易严选微信小程序商城',
+      title: '兰卡华人网',
+      desc: '兰卡斯特华人网微信小程序商城',
       path: '/pages/index/index'
     }
   },

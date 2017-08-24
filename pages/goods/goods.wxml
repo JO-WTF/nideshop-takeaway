@@ -108,10 +108,12 @@
       <view class="b">
         <view class="item" wx:for="{{relatedGoods}}" wx:key="{{item.id}}">
           <navigator url="/pages/goods/goods?id={{item.id}}">
-            <image class="img" src="{{item.list_pic_url}}" background-size="cover"></image>
-            <text class="name">{{item.name}}</text>
-            <text class="price">￥{{item.retail_price}}</text>
+            <view class="img" style="background-image:url('{{item.list_pic_url}}');background-size: cover;background-repeat: no-repeat;background-position: center;"></view>
           </navigator>
+          <text class="name">{{item.name}}</text>
+          <text class="price" data-id="{{item.id}}" bindtap='addToCart'>￥{{item.retail_price}}</text>
+          <image class="icon" data-id="{{item.id}}" bindtap='addToCart' src="/static/images/ic_menu_shoping_nor.png"></image>
+
         </view>
       </view>
     </view>
