@@ -17,7 +17,7 @@
           <view class="item {{isEditCart ? 'edit' : ''}}" wx:for="{{cartGoods}}" wx:key="{{item.id}}">
             <view class="checkbox {{item.checked ? 'checked' : ''}}" bindtap="checkedItem" data-item-index="{{index}}"></view>
             <view class="cart-goods">
-              <image class="img" src="{{item.list_pic_url}}"></image>
+              <view class="img" style="background-image:url('{{item.list_pic_url}}');background-size:cover;background-repeat:no-repeat;background-position:center;"></view>
               <view class="info">
                 <view class="t">
                   <text class="name">{{item.goods_name}}</text>

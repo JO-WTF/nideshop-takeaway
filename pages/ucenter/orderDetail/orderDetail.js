@@ -48,6 +48,21 @@ Page({
       url: '/pages/pay/pay',
     })
   },
+  cancelOrder(){
+    wx.showModal({
+      title: '提示',
+      content: '取消订单需与商家进行确认，是否拨打商家电话？',
+      success: function (res) {
+        if (res.confirm) {
+          wx.makePhoneCall({
+            phoneNumber: '01524846456'
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   onReady:function(){
     // 页面渲染完成
   },
