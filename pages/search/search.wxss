@@ -288,8 +288,9 @@ page{
 }
 
 .cate-item .item .img{
-  width: 302rpx;
+  width: 100%;
   height: 302rpx;
+  margin: auto;
 }
 
 .cate-item .item .name{

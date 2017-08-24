@@ -6,9 +6,10 @@
   height: 750rpx;
 }
 
-.goodsimgs image{
-  width: 750rpx;
-  height: 750rpx;
+.goodsimgs view{
+  height:750rpx; 
+  width:100%;
+  margin:auto;
 }
 
 .service-policy{
@@ -297,7 +298,7 @@
 
 .goods-attr .item{
     width: 687.5rpx;
-    height: 68rpx;
+    /* height: 68rpx; */
     padding: 11rpx 20rpx;
     margin-bottom: 11rpx;
     background: #f7f7f7;
@@ -316,24 +317,30 @@
 
 .goods-attr .right{
     float: left;
-    font-size: 36.5rpx;
-    margin-left: 20rpx;
+    font-size: 25rpx;
+    margin-left: 10rpx;
     width: 480rpx;
-    height: 45rpx;
+    /* height: 45rpx; */
     line-height: 45rpx;
     overflow: hidden;
     color: #333;
+    word-wrap: break-word;
 }
-
+.spec-con {
+  background:#fff;
+  padding:20rpx 0 0 20rpx;
+}
 .detail{
     width: 750rpx;
     height: auto;
     overflow: hidden;
+    background:#fff;
 }
 
 .detail image{
     width: 750rpx;
     display: block;
+    margin:auto;
 }
 
 

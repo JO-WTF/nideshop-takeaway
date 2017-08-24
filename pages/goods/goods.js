@@ -28,6 +28,7 @@ Page({
     let that = this;
     util.request(api.GoodsDetail, { id: that.data.id }).then(function (res) {
       if (res.errno === 0) {
+        console.log(res.data)
         that.setData({
           goods: res.data.info,
           gallery: res.data.gallery,

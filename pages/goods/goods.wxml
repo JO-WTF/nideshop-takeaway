@@ -2,7 +2,8 @@
   <view wx:if="{{!openAttr}}">
     <swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
       <swiper-item wx:for="{{gallery}}" wx:key="{{item.id}}">
-        <image src="{{item.img_url}}" background-size="cover"></image>
+        <!-- <image src="{{item.img_url}}" background-size="cover"></image> -->
+        <view style="background-image:url('{{item.img_url}}');background-size: cover;background-repeat: no-repeat;background-position: center;"></view>
       </swiper-item>
     </swiper>
     <!-- <view class="service-policy">
@@ -30,16 +31,15 @@
           <view class="value {{vitem.checked ? 'selected' : ''}}" bindtap="clickSkuValue" wx:for="{{item.valueList}}" wx:for-item="vitem" wx:key="{{vitem.id}}" data-value-id="{{vitem.id}}" data-name-id="{{vitem.specification_id}}">{{vitem.value}}</view>
         </view>
       </view>
-
     </view>
-    <!--<view class="section-nav section-act">
+    <!-- <view class="section-nav section-act">
       <view class="t">
         <view class="label">1个促销:</view>
         <view class="tag">万圣趴</view>
         <view class="text">全场满499，额外送糖果</view>
       </view>
       <image class="i" src="../../static/images/address_right.png" background-size="cover"></image>
-    </view>-->
+    </view> -->
     <view class="comments" wx:if="{{comment.count > 0}}">
       <view class="h">
         <navigator url="../comment/comment?valueId={{goods.id}}&typeId=0">
@@ -67,7 +67,7 @@
       </view>
     </view>
     <view class="goods-attr">
-      <view class="t">商品参数</view>
+      <view class="t">详情</view>
       <view class="l">
         <view class="item" wx:for="{{attribute}}" wx:key="{{item.name}}">
           <text class="left">{{item.name}}</text>

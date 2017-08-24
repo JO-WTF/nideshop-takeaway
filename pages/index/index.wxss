@@ -359,8 +359,9 @@
 
 .good-grid .item .img {
   margin-top: 20rpx;
-  width: 302rpx;
+  width: 100%;
   height: 302rpx;
+  margin:auto;
 }
 
 .good-grid .item .name {
