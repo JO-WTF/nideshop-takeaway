@@ -8,12 +8,34 @@
       </navigator>
     </swiper-item>
   </swiper>
+  <view class="search">
+    <navigator url="/pages/search/search" class="input">
+      <image class="icon"></image>
+      <text class="txt">搜索, 共{{goodsCount}}款菜品</text>
+    </navigator>
+  </view>
   <view class="m-menu">
-    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
+    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}"  wx:if="{{item.id <= channel[4].id}}">
       <image src="{{item.icon_url}}" background-size="cover"></image>
       <text>{{item.name}}</text>
     </navigator>
   </view>
+  <!-- <view class="m-menu">
+    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}"  wx:if="{{item.id > channel[4].id && item.id <= channel[9].id}}">
+      <image src="{{item.icon_url}}" background-size="cover"></image>
+      <text>{{item.name}}</text>
+    </navigator>
+  </view>
+  <view class="m-menu">
+    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}"  wx:if="{{item.id > channel[9].id && item.id <= channel[channel.length-1].id}}">
+      <image src="{{item.icon_url}}" background-size="cover"></image>
+      <text>{{item.name}}</text>
+    </navigator>
+  </view> -->
+
+
+<!-- 
+
   <view class="a-section a-brand">
     <view class="h">
       <navigator url="../brand/brand">
@@ -52,7 +74,7 @@
         </navigator>
       </view>
     </view>
-  </view>
+  </view> -->
   <view class="a-section a-popular" wx:if="{{hotGoods.length > 0}}">
     <view class="h">
       <view>
@@ -76,7 +98,7 @@
       </view>
     </view>
   </view>
-  <view class="a-section a-topic" wx:if="topics.length > 0">
+  <!-- <view class="a-section a-topic" wx:if="topics.length > 0">
     <view class="h">
       <view>
       <navigator url="../topic/topic" open-type="switchTab">
@@ -98,7 +120,7 @@
         </view>
       </scroll-view>
     </view>
-  </view>
+  </view> -->
   <view class="good-grid" wx:for="{{floorGoods}}" wx:key="{{item.id}}">
     <view class="h">
       <view>
@@ -117,7 +139,7 @@
       </block>
       <view class="item item-b item-more">
           <navigator url="/pages/category/category?id={{item.id}}" class="more-a">
-            <view class="txt">{{'更多'+item.name+'好物'}}</view>
+            <view class="txt">{{'更多'+item.name}}</view>
             <image class="icon" src="../../static/images/icon_go_more.png" background-size="cover"></image>
           </navigator>
       </view>

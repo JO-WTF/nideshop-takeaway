@@ -30,7 +30,16 @@ Page({
         });
       }
     });
+    //获取购物车商品数量
+    var that = this;
+    util.request(api.CartGoodsCount).then(function (res) {
+      if (res.errno === 0) {
+        that.setData({
+          cartGoodsCount: res.data.cartTotal.goodsCount
+        });
 
+      }
+    });
 
     this.getCategoryInfo();
 
@@ -112,5 +121,48 @@ Page({
     });
 
     this.getCategoryInfo();
-  }
+  },
+  addToCart: function (event) {
+    var that = this;
+    util.request(api.GoodsDetail, { id: event.target.dataset.id }).then(function (res) {
+      if (res.errno === 0) {
+        that.setData({
+          goods: res.data.info,
+          attribute: res.data.attribute,
+          specificationList: res.data.specificationList,
+          productList: res.data.productList,
+        });
+        if (res.data.productList.length>1){
+          wx.showToast({
+            title: '点击商品图片选择商品规格',
+          })
+        }
+        else{
+          util.request(api.CartAdd, { goodsId: event.target.dataset.id, number: 1, productId: res.data.productList[0].id }, "POST")
+            .then(function (res) {
+              let _res = res;
+              if (_res.errno == 0) {
+                wx.showToast({
+                  title: '添加成功'
+                });
+                that.setData({
+                  cartGoodsCount: _res.data.cartTotal.goodsCount
+                });
+              } else {
+                wx.showToast({
+                  image: '/static/images/icon_error.png',
+                  title: _res.errmsg,
+                  mask: true
+                });
+              }
+
+            });
+        }
+      }
+    });
+    console.log(event.target.dataset.id)
+    //添加到购物车
+
+
+  },
 })

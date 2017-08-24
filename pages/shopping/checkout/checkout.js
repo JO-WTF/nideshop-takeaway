@@ -39,13 +39,12 @@ Page({
       // Do something when catch error
     }
 
-
+    
   },
   getCheckoutInfo: function () {
     let that = this;
     util.request(api.CartCheckout, { addressId: that.data.addressId, couponId: that.data.couponId}).then(function (res) {
       if (res.errno === 0) {
-        console.log(res.data);
         that.setData({
           checkedGoodsList: res.data.checkedGoodsList,
           checkedAddress: res.data.checkedAddress,
@@ -58,7 +57,9 @@ Page({
           orderTotalPrice: res.data.orderTotalPrice
         });
       }
-			if (!res.data.checkedAddress.id){
+      console.log(res.data.couponList)
+      console.log(res.data.couponPrice)
+      if (!res.data.checkedAddress.id){
         that.setData({
           checkedAddress: {id:0}
         })
@@ -78,7 +79,7 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
-
+    
   },
   onShow:function(){
     // 页面显示
@@ -86,15 +87,15 @@ Page({
       title: '加载中...',
     })
     this.getCheckoutInfo();
-
+    
   },
   onHide:function(){
     // 页面隐藏
-
+    
   },
   onUnload:function(){
     // 页面关闭
-
+    
   },
   submitOrder: function(){
 
@@ -109,12 +110,12 @@ Page({
         wx.redirectTo({
           url: '/pages/pay/pay?orderId=' + res.data.orderInfo.id + '&actualPrice=' + res.data.orderInfo.actual_price
         })
-
+      
       } else {
         util.showErrorToast(res.data.errmsg);
       }
     });
 
-
+   
   }
 })

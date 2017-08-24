@@ -1,4 +1,4 @@
-var NewApiRootUrl = 'http://192.168.31.116:8360/api/';
+var NewApiRootUrl = 'https://shop.lancasterbbs.uk/api/';
 
 module.exports = {
     IndexUrl: NewApiRootUrl + 'index/index', //首页数据接口

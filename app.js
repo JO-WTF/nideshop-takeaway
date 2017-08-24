@@ -5,15 +5,17 @@ var user = require('./services/user.js');
 App({
   onLaunch: function () {
     //获取用户的登录信息
+    console.log("开始登录")
     user.checkLogin().then(res => {
       console.log('app login')
       this.globalData.userInfo = wx.getStorageSync('userInfo');
       this.globalData.token = wx.getStorageSync('token');
-    }).catch(() => {
-      
+    }).catch((e) => {
+    console.log(e)
+    user.loginByWeixin()
     });
   },
-  
+
   globalData: {
     userInfo: {
       nickname: 'Hi,游客',

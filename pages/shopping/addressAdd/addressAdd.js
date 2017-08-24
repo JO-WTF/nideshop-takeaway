@@ -146,7 +146,7 @@ Page({
     this.setData({
       regionType: regionTypeIndex + 1
     })
-
+    
     let selectRegionItem = selectRegionList[regionTypeIndex];
 
     this.getRegionList(selectRegionItem.parent_id);
@@ -279,10 +279,10 @@ Page({
     }
 
 
-    if (address.district_id == 0) {
-      util.showErrorToast('请输入省市区');
-      return false;
-    }
+    // if (address.district_id == 0) {
+    //   util.showErrorToast('请输入省市区');
+    //   return false;
+    // }
 
     if (address.address == '') {
       util.showErrorToast('请输入详细地址');
@@ -291,7 +291,7 @@ Page({
 
 
     let that = this;
-    util.request(api.AddressSave, {
+    util.request(api.AddressSave, { 
       id: address.id,
       name: address.name,
       mobile: address.mobile,

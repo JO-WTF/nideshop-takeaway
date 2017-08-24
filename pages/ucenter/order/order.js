@@ -3,7 +3,7 @@ var api = require('../../../config/api.js');
 
 Page({
   data:{
-    orderList: []
+    orderList: [],
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -21,9 +21,9 @@ Page({
       }
     });
   },
-  payOrder(event){
+  payOrder:function(event){
     wx.redirectTo({
-      url: '/pages/pay/pay?orderID='+event.target.dataset.orderId+'&actualPrice='+event.target.dataset.acutalPrice,
+      url: '/pages/pay/pay?id='+event.target.dataset.id,
     })
   },
   onReady:function(){

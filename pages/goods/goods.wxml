@@ -5,11 +5,11 @@
         <image src="{{item.img_url}}" background-size="cover"></image>
       </swiper-item>
     </swiper>
-    <view class="service-policy">
+    <!-- <view class="service-policy">
       <view class="item">30天无忧退货</view>
       <view class="item">48小时快速退款</view>
       <view class="item">满88元免邮费</view>
-    </view>
+    </view> -->
     <view class="goods-info">
       <view class="c">
         <text class="name">{{goods.name}}</text>
@@ -22,9 +22,15 @@
         </view>
       </view>
     </view>
-    <view class="section-nav section-attr" bindtap="switchAttrPop">
-      <view class="t">请选择规格数量</view>
-      <image class="i" src="../../static/images/address_right.png" background-size="cover"></image>
+
+    <view class="spec-con">
+      <view class="spec-item" wx:for="{{specificationList}}" wx:key="{{item.specification_id}}">
+        <view class="name">{{item.name}}</view>
+        <view class="values">
+          <view class="value {{vitem.checked ? 'selected' : ''}}" bindtap="clickSkuValue" wx:for="{{item.valueList}}" wx:for-item="vitem" wx:key="{{vitem.id}}" data-value-id="{{vitem.id}}" data-name-id="{{vitem.specification_id}}">{{vitem.value}}</view>
+        </view>
+      </view>
+
     </view>
     <!--<view class="section-nav section-act">
       <view class="t">
@@ -150,7 +156,7 @@
 
       </view>
     </view>
-    <view class="c">立即购买</view>
+    <!-- <view class="c">立即购买</view> -->
     <view class="r" bindtap="addToCart">加入购物车</view>
   </view>
 </scroll-view>

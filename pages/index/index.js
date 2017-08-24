@@ -12,7 +12,9 @@ Page({
     brands: [],
     floorGoods: [],
     banner: [],
-    channel: []
+    channel: [],
+    goodsCount: 0,
+
   },
   onShareAppMessage: function () {
     return {
@@ -26,6 +28,7 @@ Page({
     let that = this;
     util.request(api.IndexUrl).then(function (res) {
       if (res.errno === 0) {
+        console.log(res);
         that.setData({
           newGoods: res.data.newGoodsList,
           hotGoods: res.data.hotGoodsList,
@@ -35,6 +38,8 @@ Page({
           banner: res.data.banner,
           channel: res.data.channel
         });
+      }else{
+        console.log(res);
       }
     });
   },
@@ -43,6 +48,13 @@ Page({
   },
   onReady: function () {
     // 页面渲染完成
+    let that=this;
+    util.request(api.GoodsCount).then(function (res) {
+      that.setData({
+        goodsCount: res.data.goodsCount
+      });
+      console.log(res.data.goodsCount)
+    });
   },
   onShow: function () {
     // 页面显示

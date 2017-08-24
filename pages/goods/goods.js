@@ -39,7 +39,8 @@ Page({
           productList: res.data.productList,
           userHasCollect: res.data.userHasCollect
         });
-
+        console.log(res.data.productList)
+        console.log("fuck me")
         if (res.data.userHasCollect == 1) {
           that.setData({
             'collectBackImage': that.data.hasCollectImage
@@ -210,12 +211,12 @@ Page({
 
   },
   switchAttrPop: function () {
-    if (this.data.openAttr == false) {
-      this.setData({
-        openAttr: !this.data.openAttr,
-        collectBackImage: "/static/images/detail_back.png"
-      });
-    }
+    // if (this.data.openAttr == false) {
+    //   this.setData({
+    //     openAttr: !this.data.openAttr,
+    //     collectBackImage: "/static/images/detail_back.png"
+    //   });
+    // }
   },
   closeAttrOrCollect: function () {
     let that = this;
@@ -267,19 +268,23 @@ Page({
   },
   addToCart: function () {
     var that = this;
-    if (this.data.openAttr == false) {
-      //打开规格选择窗口
-      this.setData({
-        openAttr: !this.data.openAttr,
-        collectBackImage: "/static/images/detail_back.png"
-      });
-    } else {
+    // if (this.data.openAttr == false) {
+    //   //打开规格选择窗口
+    //   this.setData({
+    //     openAttr: !this.data.openAttr,
+    //     collectBackImage: "/static/images/detail_back.png"
+    //   });
+    // } else {
 
       //提示选择完整规格
       if (!this.isCheckedAllSpec()) {
+        wx.showToast({
+          title: '请选择规格',
+          duration:2000
+        });
         return false;
       }
-
+      console.log("key",this.getCheckedSpecKey(),"end")
       //根据选中的规格，判断是否有对应的sku信息
       let checkedProduct = this.getCheckedProductItem(this.getCheckedSpecKey());
       if (!checkedProduct || checkedProduct.length <= 0) {
@@ -294,7 +299,8 @@ Page({
       }
 
       //添加到购物车
-      util.request(api.CartAdd, { goodsId: this.data.goods.id, number: this.data.number, productId: checkedProduct[0].id }, "POST")
+      console.log(checkedProduct[0].id)
+      util.request(api.CartAdd, { goodsId: this.data.goods.id, number: 1, productId: checkedProduct[0].id }, "POST")
         .then(function (res) {
           let _res = res;
           if (_res.errno == 0) {
@@ -302,7 +308,7 @@ Page({
               title: '添加成功'
             });
             that.setData({
-              openAttr: !that.data.openAttr,
+              // openAttr: !that.data.openAttr,
               cartGoodsCount: _res.data.cartTotal.goodsCount
             });
             if (that.data.userHasCollect == 1) {
@@ -323,7 +329,7 @@ Page({
           }
 
         });
-    }
+    // }
 
   },
   cutNumber: function () {
