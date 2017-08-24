@@ -143,7 +143,8 @@ Page({
               let _res = res;
               if (_res.errno == 0) {
                 wx.showToast({
-                  title: '添加成功'
+                  title: '添加成功',
+                  duration:500,
                 });
                 that.setData({
                   cartGoodsCount: _res.data.cartTotal.goodsCount

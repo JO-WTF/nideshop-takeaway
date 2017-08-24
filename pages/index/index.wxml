@@ -132,9 +132,10 @@
         <view class="item {{iindex % 2 == 0 ? '' : 'item-b'}}">
           <navigator url="../goods/goods?id={{iitem.id}}" class="a">
             <view class="img" style="background-image:url('{{iitem.list_pic_url}}');background-size: cover;background-repeat: no-repeat;background-position: center;"></view>
-            <text class="name">{{iitem.name}}</text>
-            <text class="price">￥{{iitem.retail_price}}</text>
           </navigator>
+          <text class="name">{{iitem.name}}</text>
+          <text class="price" data-id="{{iitem.id}}" bindtap='addToCart'>￥{{iitem.retail_price}}</text>
+          <image class="icon" data-id="{{iitem.id}}" bindtap='addToCart' src="/static/images/ic_menu_shoping_nor.png"></image>
         </view>
       </block>
       <view class="item item-b item-more">

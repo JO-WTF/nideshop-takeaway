@@ -182,7 +182,7 @@ page{
 }
 
 .cart-view .item.edit .t{
-    display: none;
+    /* display: none; */
 }
 
 .cart-view .item.edit .attr{

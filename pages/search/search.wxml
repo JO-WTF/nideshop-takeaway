@@ -48,13 +48,16 @@
     </view>
   </view>
   <view class="cate-item">
-    <view class="b">
-      <navigator class="item {{(iindex + 1) % 2 == 0 ? 'item-b' : ''}}" url="/pages/goods/goods?id={{iitem.id}}" wx:for="{{goodsList}}" wx:for-item="iitem" wx:for-index="iindex">
-        <view class="img" style="background-image:url('{{iitem.list_pic_url}}');background-size: cover;background-repeat: no-repeat;background-position: center;"></view>
-        <text class="name">{{iitem.name}}</text>
-        <text class="price">￥{{iitem.retail_price}}</text>
-      </navigator>
-    </view>
+        <view class="b">
+            <view class="item {{(iindex + 1) % 2 == 0 ? 'item-b' : ''}}"  wx:for="{{goodsList}}" wx:for-item="iitem" wx:for-index="iindex" >
+                <navigator url="/pages/goods/goods?id={{iitem.id}}">
+                <view class="img" style="background-image:url('{{iitem.list_pic_url}}');background-size: cover;background-repeat: no-repeat;background-position: center;"></view>
+                </navigator>
+                <text class="name">{{iitem.name}}</text>
+                <text class="price" data-id="{{iitem.id}}" bindtap='addToCart'>￥{{iitem.retail_price}}</text>
+                <image class="icon" data-id="{{iitem.id}}" bindtap='addToCart' src="/static/images/ic_menu_shoping_nor.png"></image>
+            </view>
+        </view>
   </view>
   </view>
 

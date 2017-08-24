@@ -314,6 +314,13 @@ page{
   color: #b4282d;
 }
 
+.icon{
+    display: block;
+    height: 65rpx;
+    width: 65rpx;
+    float: right;
+    padding:0 10px 10px 0;
+}
 .search-result-empty{
     width: 100%;
     height: 100%;

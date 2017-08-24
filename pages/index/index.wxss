@@ -349,7 +349,7 @@
 }
 
 .good-grid .b .item .a{
-  height: 452rpx;
+  /* height: 452rpx; */
   width: 100%;
 }
 
@@ -388,6 +388,14 @@
 .good-grid .more-item{
   height: 100%;
   width: 100%;
+}
+
+.icon{
+    display: block;
+    height: 65rpx;
+    width: 65rpx;
+    float: right;
+    padding:0 10px 10px 0;
 }
 
 .more-a{
