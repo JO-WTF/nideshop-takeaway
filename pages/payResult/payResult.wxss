@@ -42,18 +42,18 @@ page {
   margin-bottom: 60rpx;
 }
 
-.pay-result .error .tips {
+.pay-result  .tips {
   color: #7f7f7f;
   margin-bottom: 70rpx;
 }
 
-.pay-result .error .tips .p {
+.pay-result .tips .p {
   font-size: 24rpx;
   line-height: 42rpx;
   text-align: center;
 }
 
-.pay-result .error .tips .p {
+.pay-result .tips .p {
   line-height: 42rpx;
   text-align: center;
 }

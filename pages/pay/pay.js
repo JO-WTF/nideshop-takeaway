@@ -62,6 +62,7 @@ Page({
     let that = this;
     util.request(api.PayPrepayId, { orderId: that.data.orderId, payType: that.data.payType  }).then(function (res) {
       if (res.errno === 0) {
+				console.log(res);
         let payParam = res.data;
         wx.requestPayment({
           'timeStamp': payParam.timeStamp,
@@ -71,12 +72,12 @@ Page({
           'paySign': payParam.paySign,
           'success': function (res) {
             wx.redirectTo({
-              url: '/pages/payResult/payResult?status=true',
+              url: '/pages/payResult/payResult?status=1',
             })
           },
           'fail': function (res) {
             wx.redirectTo({
-              url: '/pages/payResult/payResult?status=false',
+              url: '/pages/payResult/payResult?status=0',
             })
           }
         })
@@ -86,6 +87,13 @@ Page({
     });
   },
   startPay() {
-    this.requestPayParam();
+		let that = this;
+		if (that.data.payType>1){
+    	this.requestPayParam();
+		}else{
+			wx.redirectTo({
+				url: '/pages/payResult/payResult?status=2',
+			})
+		}
   }
 })
