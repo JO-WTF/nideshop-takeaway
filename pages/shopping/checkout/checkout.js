@@ -15,7 +15,8 @@ Page({
     orderTotalPrice: 0.00,  //订单总价
     actualPrice: 0.00,     //实际需要支付的总价
     addressId: 0,
-    couponId: 0
+    couponId: 0,
+		postscript: ''
   },
   onLoad:function(options){
 
@@ -39,7 +40,7 @@ Page({
       // Do something when catch error
     }
 
-    
+
   },
   getCheckoutInfo: function () {
     let that = this;
@@ -57,11 +58,11 @@ Page({
           orderTotalPrice: res.data.orderTotalPrice
         });
       }
-      console.log(res.data.couponList)
-      console.log(res.data.couponPrice)
+      // console.log(res.data.couponList)
+      // console.log(res.data.couponPrice)
       if (!res.data.checkedAddress.id){
         that.setData({
-          checkedAddress: {id:0}
+          checkedAddress: {id:0},
         })
       }
       wx.hideLoading();
@@ -79,7 +80,7 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
-    
+
   },
   onShow:function(){
     // 页面显示
@@ -87,15 +88,31 @@ Page({
       title: '加载中...',
     })
     this.getCheckoutInfo();
-    
+
   },
   onHide:function(){
     // 页面隐藏
-    
+
   },
   onUnload:function(){
     // 页面关闭
-    
+
+  },
+  bindinputPostscript(event) {
+    let postscript = this.data.postscript;
+    postscript = event.detail.value;
+    this.setData({
+      postscript: postscript
+    });
+		console.log(this.data.postscript)
+  },
+  quickPostscript(event) {
+    let postscript = this.data.postscript;
+    postscript = postscript+" "+event.target.dataset.postscript+" ";
+    this.setData({
+			postscript: postscript
+    });
+		console.log(this.data.postscript)
   },
   submitOrder: function(){
 
@@ -105,17 +122,17 @@ Page({
     }
 
     let that = this;
-    util.request(api.OrderSubmit, { addressId: that.data.addressId, couponId: that.data.couponId }, 'POST').then(function (res) {
+    util.request(api.OrderSubmit, { addressId: that.data.addressId, couponId: that.data.couponId, postscript: that.data.postscript }, 'POST').then(function (res) {
       if (res.errno === 0) {
         wx.redirectTo({
           url: '/pages/pay/pay?orderId=' + res.data.orderInfo.id + '&actualPrice=' + res.data.orderInfo.actual_price
         })
-      
+
       } else {
         util.showErrorToast(res.data.errmsg);
       }
     });
 
-   
+
   }
 })

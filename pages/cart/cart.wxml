@@ -26,11 +26,11 @@
                 <!-- <view class="attr">{{ isEditCart ? '已选择:' : ''}}{{item.goods_specifition_name_value}}</view> -->
                 <view class="b">
                   <text class="price">￥{{item.retail_price}}</text>
-                  <!-- <view class="selnum">
+                  <view class="selnum">
                     <view class="cut" bindtap="cutNumber" data-item-index="{{index}}">-</view>
                     <input value="{{item.number}}" class="number" disabled="true" type="number" />
                     <view class="add" bindtap="addNumber" data-item-index="{{index}}">+</view>
-                  </view> -->
+                  </view>
                 </view>
               </view>
             </view>
@@ -45,7 +45,7 @@
                         <text class="txt">再加26元, 3件赠1件蔓越莓干</text>
                         <image class="icon" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/go-b67cb9718d.png"></image>
                     </view>
-                    <view class="get">领赠品</view>                
+                    <view class="get">领赠品</view>
                 </view>
                 <view class="goods">
                     <view class="item">

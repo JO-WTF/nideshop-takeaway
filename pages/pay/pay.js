@@ -56,6 +56,7 @@ Page({
     this.setData({
       payType: e.detail.value,
     })
+		console.log(this.data.payType)
   },
   //向服务请求支付参数
   requestPayParam() {
@@ -72,7 +73,7 @@ Page({
           'paySign': payParam.paySign,
           'success': function (res) {
             wx.redirectTo({
-              url: '/pages/payResult/payResult?status=1',
+              url: '/pages/payResult/payResult?status=1&order_id='+that.data.orderID,
             })
           },
           'fail': function (res) {
@@ -92,7 +93,7 @@ Page({
     	this.requestPayParam();
 		}else{
 			wx.redirectTo({
-				url: '/pages/payResult/payResult?status=2',
+				url: '/pages/payResult/payResult?status=2&order_id='+that.data.orderID,
 			})
 		}
   }

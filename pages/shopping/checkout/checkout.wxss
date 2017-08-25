@@ -180,6 +180,46 @@ page{
     border-bottom: none;
 }
 
+.add-form{
+    background: #fff;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+
+.btn{
+		float:left;
+    line-height: 66rpx;
+    border-radius: 5rpx;
+    text-align: center;
+    margin: 0 15rpx;
+    padding: 0 20rpx;
+    height: 66rpx;
+		width:auto;
+		margin:5rpx;
+}
+
+.btn.active{
+    background: #b4282d;
+    color: #fff;
+}
+
+.form-item{
+    height: 116rpx;
+    padding-left: 31.25rpx;
+    border-bottom: 1px solid #d9d9d9;
+    display: flex;
+    align-items: center;
+    padding-right: 31.25rpx;
+}
+.form-item .input{
+    /*flex: 1;*/
+    height: 44rpx;
+    line-height: 44rpx;
+    overflow: hidden;
+		width:100%;
+}
 .goods-items{
     margin-top: 20rpx;
     width: 100%;

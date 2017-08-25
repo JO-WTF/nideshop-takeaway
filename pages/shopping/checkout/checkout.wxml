@@ -52,7 +52,7 @@
                 <text class="txt">￥{{freightPrice}}</text>
             </view>
         </view>
-        <view class="order-item no-border">
+        <view class="order-item">
             <view class="l">
                 <text class="name">优惠券</text>
             </view>
@@ -60,6 +60,19 @@
                 <text class="txt">-￥{{couponPrice}}</text>
             </view>
         </view>
+    </view>
+    <view class="add-form no-border">
+      <view class="form-item">
+          <input class="input" bindinput="bindinputPostscript" value="{{postscript}}" placeholder="备注: 我有特殊的偏♂好"/>
+      </view>
+      <view class="form-item">
+				<view class="btn active" bindtap="quickPostscript" data-postscript="微辣">微辣</view>
+				<view class="btn active" bindtap="quickPostscript" data-postscript="不要香菜">不要香菜</view>
+				<view class="btn active" bindtap="quickPostscript" data-postscript="少放葱">少放葱</view>
+				<view class="btn active" bindtap="quickPostscript" data-postscript="没有零钱">没有零钱</view>
+				<view class="btn active" bindtap="quickPostscript" data-postscript="自取">自取</view>
+	      </view>
+
     </view>
 
     <view class="goods-items">
