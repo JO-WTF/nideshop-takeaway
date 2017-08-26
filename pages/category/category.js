@@ -74,7 +74,6 @@ Page({
         } else {
           //显示错误信息
         }
-        
       });
   },
   onReady: function () {
@@ -123,6 +122,7 @@ Page({
     this.getCategoryInfo();
   },
   addToCart: function (event) {
+    //添加到购物车
     var that = this;
     util.request(api.GoodsDetail, { id: event.target.dataset.id }).then(function (res) {
       if (res.errno === 0) {
@@ -162,8 +162,10 @@ Page({
       }
     });
     console.log(event.target.dataset.id)
-    //添加到购物车
-
-
   },
+	openCartPage: function () {
+		wx.switchTab({
+			url: '/pages/cart/cart',
+		});
+	},
 })

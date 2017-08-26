@@ -32,7 +32,6 @@
       <view class="box">
         <text class="cart-count">{{cartGoodsCount}}</text>
         <image bindtap="openCartPage" class="icon" src="/static/images/ic_menu_shoping_nor.png"></image>
-
       </view>
     </view>
   </view>
