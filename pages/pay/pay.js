@@ -8,8 +8,7 @@ Page({
     actualPrice: 0.00,
     items: [
       { value: 0, name: '货到付款(现金)'},
-
-      { value: 1, name: '微信支付'},
+      // { value: 1, name: '微信支付'},
     ],
     payType:0,
     orderInfo: {},
