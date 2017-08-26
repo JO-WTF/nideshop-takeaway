@@ -41,7 +41,6 @@ Page({
           userHasCollect: res.data.userHasCollect
         });
         console.log(res.data.productList)
-        console.log("fuck me")
         if (res.data.userHasCollect == 1) {
           that.setData({
             'collectBackImage': that.data.hasCollectImage
