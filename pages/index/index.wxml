@@ -34,7 +34,7 @@
   </view> -->
 
 
-<!-- 
+<!--
 
   <view class="a-section a-brand">
     <view class="h">
@@ -50,7 +50,7 @@
             <view class="mt">
               <text class="brand">{{item.name}}</text>
               <text class="price">{{item.floor_price}}</text>
-              <text class="unit">元起</text>
+              <text class="unit">镑起</text>
             </view>
           </view>
         </navigator>
@@ -70,7 +70,7 @@
         <navigator url="../goods/goods?id={{item.id}}">
           <image class="img" src="{{item.list_pic_url}}" background-size="cover"></image>
           <text class="name">{{item.name}}</text>
-          <text class="price">￥{{item.retail_price}}</text>
+          <text class="price">£{{item.retail_price}}</text>
         </navigator>
       </view>
     </view>
@@ -91,7 +91,7 @@
             <view class="text">
               <text class="name">{{item.name}}</text>
               <text class="desc">{{item.goods_brief}}</text>
-              <text class="price">￥{{item.retail_price}}</text>
+              <text class="price">£{{item.retail_price}}</text>
             </view>
           </view>
         </navigator>
@@ -113,7 +113,7 @@
             <image class="img" src="{{item.scene_pic_url}}" background-size="cover"></image>
             <view class="np">
               <text class="name">{{item.title}}</text>
-              <text class="price">￥{{item.price_info}}元起</text>
+              <text class="price">£{{item.price_info}}镑起</text>
             </view>
             <text class="desc">{{item.subtitle}}</text>
           </navigator>
@@ -134,7 +134,7 @@
             <view class="img" style="background-image:url('{{iitem.list_pic_url}}');background-size: cover;background-repeat: no-repeat;background-position: center;"></view>
           </navigator>
           <text class="name">{{iitem.name}}</text>
-          <text class="price" data-id="{{iitem.id}}" bindtap='addToCart'>￥{{iitem.retail_price}}</text>
+          <text class="price" data-id="{{iitem.id}}" bindtap='addToCart'>£{{iitem.retail_price}}</text>
           <image class="icon" data-id="{{iitem.id}}" bindtap='addToCart' src="/static/images/ic_menu_shoping_nor.png"></image>
         </view>
       </block>

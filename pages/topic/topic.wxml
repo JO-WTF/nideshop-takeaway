@@ -5,7 +5,7 @@
             <view class="info">
                 <text class="title">{{item.title}}</text>
                 <text class="desc">{{item.subtitle}}</text>
-                <text class="price">{{item.price_info}}元起</text>
+                <text class="price">{{item.price_info}}镑起</text>
             </view>
         </navigator>
         <view class="page" wx:if="{{showPage}}">

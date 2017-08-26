@@ -54,7 +54,7 @@
                 <view class="img" style="background-image:url('{{iitem.list_pic_url}}');background-size: cover;background-repeat: no-repeat;background-position: center;"></view>
                 </navigator>
                 <text class="name">{{iitem.name}}</text>
-                <text class="price" data-id="{{iitem.id}}" bindtap='addToCart'>￥{{iitem.retail_price}}</text>
+                <text class="price" data-id="{{iitem.id}}" bindtap='addToCart'>£{{iitem.retail_price}}</text>
                 <image class="icon" data-id="{{iitem.id}}" bindtap='addToCart' src="/static/images/ic_menu_shoping_nor.png"></image>
             </view>
         </view>

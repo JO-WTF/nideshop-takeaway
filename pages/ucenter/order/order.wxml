@@ -16,7 +16,7 @@
                 <view class="status"></view>
             </view>
             <view class="b">
-                <view class="l">实付：￥{{item.actual_price}}</view>
+                <view class="l">实付：£{{item.actual_price}}</view>
                 <view class="r">
                     <button class="btn" data-id="{{item.id}}" data-order-index="{{index}}" catchtap="payOrder" wx:if="{{item.handleOption.pay}}">去付款</button>
                 </view>

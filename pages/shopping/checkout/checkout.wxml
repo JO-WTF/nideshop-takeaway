@@ -41,7 +41,7 @@
                 <text class="name">商品合计</text>
             </view>
             <view class="r">
-                <text class="txt">￥{{goodsTotalPrice}}</text>
+                <text class="txt">£{{goodsTotalPrice}}</text>
             </view>
         </view>
         <view class="order-item">
@@ -49,7 +49,7 @@
                 <text class="name">运费</text>
             </view>
             <view class="r">
-                <text class="txt">￥{{freightPrice}}</text>
+                <text class="txt">£{{freightPrice}}</text>
             </view>
         </view>
         <view class="order-item">
@@ -57,7 +57,7 @@
                 <text class="name">优惠券</text>
             </view>
             <view class="r">
-                <text class="txt">-￥{{couponPrice}}</text>
+                <text class="txt">-£{{couponPrice}}</text>
             </view>
         </view>
     </view>
@@ -86,13 +86,13 @@
                     <text class="number">x{{item.number}}</text>
                 </view>
                 <view class="m">{{item.goods_specifition_name_value}}</view>
-                <view class="b">￥{{item.retail_price}}</view>
+                <view class="b">£{{item.retail_price}}</view>
             </view>
         </view>
     </view>
 
     <view class="order-total">
-        <view class="l">实付：￥{{actualPrice}}</view>
+        <view class="l">实付：£{{actualPrice}}</view>
         <view class="r" bindtap="submitOrder">去付款</view>
     </view>
 </view>

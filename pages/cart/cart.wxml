@@ -2,7 +2,7 @@
   <!-- <view class="service-policy">
     <view class="item">30天无忧退货</view>
     <view class="item">48小时快速退款</view>
-    <view class="item">满88元免邮费</view>
+    <view class="item">满88镑免邮费</view>
   </view> -->
   <view class="no-cart" wx:if="{{cartGoods.length <= 0}}">
     <view class="c">
@@ -25,7 +25,7 @@
                 </view>
                 <!-- <view class="attr">{{ isEditCart ? '已选择:' : ''}}{{item.goods_specifition_name_value}}</view> -->
                 <view class="b">
-                  <text class="price">￥{{item.retail_price}}</text>
+                  <text class="price">£{{item.retail_price}}</text>
                   <view class="selnum">
                     <view class="cut" bindtap="cutNumber" data-item-index="{{index}}">-</view>
                     <input value="{{item.number}}" class="number" disabled="true" type="number" />
@@ -42,7 +42,7 @@
                 <view class="header">
                     <view class="promotion">
                         <text class="tag">满赠</text>
-                        <text class="txt">再加26元, 3件赠1件蔓越莓干</text>
+                        <text class="txt">再加26镑, 3件赠1件蔓越莓干</text>
                         <image class="icon" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/go-b67cb9718d.png"></image>
                     </view>
                     <view class="get">领赠品</view>
@@ -59,7 +59,7 @@
                                 </view>
                                 <view class="attr">220*240cm</view>
                                 <view class="b">
-                                    <text class="price">￥199.99</text>
+                                    <text class="price">£199.99</text>
                                     <view class="open">优惠活动</view>
                                 </view>
                             </view>
@@ -70,7 +70,7 @@
     </view>
     <view class="cart-bottom">
       <view class="checkbox {{checkedAllStatus ? 'checked' : ''}}" bindtap="checkedAll">全选({{cartTotal.checkedGoodsCount}})</view>
-      <view class="total">{{!isEditCart ? '￥'+cartTotal.checkedGoodsAmount : ''}}</view>
+      <view class="total">{{!isEditCart ? '£'+cartTotal.checkedGoodsAmount : ''}}</view>
       <view class="delete" bindtap="editCart">{{!isEditCart ? '编辑' : '完成'}}</view>
       <view class="checkout" bindtap="deleteCart" wx:if="{{isEditCart}}">删除所选</view>
       <view class="checkout" bindtap="checkoutOrder" wx:if="{{!isEditCart}}">下单</view>
