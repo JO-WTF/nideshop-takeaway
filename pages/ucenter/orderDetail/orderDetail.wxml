@@ -6,7 +6,7 @@
             <view class="l">实付：<text class="cost">￥{{orderInfo.actual_price}}</text></view>
             <view class="r">
                 <view class="btn" bindtap="cancelOrder">取消订单</view>
-                <view class="btn active" bindtap="payOrder">去付款</view>
+                <view wx:if="{{orderInfo.order_status<200}}" class="btn active" bindtap="payOrder">去付款</view>
             </view>
         </view>
     </view>
