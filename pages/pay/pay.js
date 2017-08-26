@@ -7,11 +7,11 @@ Page({
     orderId: 0,
     actualPrice: 0.00,
     items: [
-      { value: '1', name: '货到付款(现金)', checked: 'true' },
+      { value: 0, name: '货到付款(现金)'},
 
-      { value: '2', name: '微信支付' },
+      { value: 1, name: '微信支付'},
     ],
-    payType:1,
+    payType:0,
     orderInfo: {},
     orderGoods: [],
     handleOption: {}
@@ -19,6 +19,7 @@ Page({
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     console.log(options.orderID)
+		var pay_type=this.data.payType;
     this.setData({
       orderId: options.id,
     })
@@ -50,25 +51,13 @@ Page({
         });
       }
     });
-
-			//发送订单通知
-			util.request(api.NotifyShop, { orderId: that.data.orderId, payType: that.data.payType  }).then(function (res) {
-	      if (res.errno === 0) {
-					console.log(res);
-	      }else{
-	        console.log(res);
-	      }
-	    });
-			wx.redirectTo({
-				url: '/pages/payResult/payResult?status=2&order_id='+that.data.orderID,
-			})
-			
   },
   radioChange: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
-    this.setData({
+		console.log(this.data.items[e.detail.value].name)
+		this.setData({
       payType: e.detail.value,
     })
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
 		console.log(this.data.payType)
   },
   //向服务请求支付参数
@@ -102,7 +91,7 @@ Page({
   },
   startPay() {
 		let that = this;
-		if (that.data.payType>1){
+		if (that.data.payType>=1){
     	this.requestPayParam();
 		}else{
 			//发送订单通知

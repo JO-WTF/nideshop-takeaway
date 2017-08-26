@@ -18,12 +18,12 @@
             </view>-->
             <!-- <view class="item">
                 <text class="checkbox selected"></text>
-                
+
                 <view class="name">微信支付</view>
             </view> -->
             <radio-group class="radio-group" bindchange="radioChange">
               <label class="item" wx:for="{{items}}">
-                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+                <radio value="{{item.value}}" checked="{{item.value==payType?true:false}}"/>
                 <!-- <image src="/static/images/{{item.value}}.png" class="icon"></image> -->
                 <view class="name">{{item.name}}</view>
               </label>
