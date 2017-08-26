@@ -18,10 +18,10 @@ Page({
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
-    console.log(options.orderID)
+    console.log(options.order_id)
 		var pay_type=this.data.payType;
     this.setData({
-      orderId: options.id,
+      orderId: options.order_id,
     })
   },
   onReady: function () {
@@ -53,12 +53,10 @@ Page({
     });
   },
   radioChange: function (e) {
-		console.log(this.data.items[e.detail.value].name)
 		this.setData({
       payType: e.detail.value,
     })
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
-		console.log(this.data.payType)
+		console.log("已选择支付方式："+this.data.items[e.detail.value].name)
   },
   //向服务请求支付参数
   requestPayParam() {

@@ -125,7 +125,7 @@ Page({
     util.request(api.OrderSubmit, { addressId: that.data.addressId, couponId: that.data.couponId, postscript: that.data.postscript }, 'POST').then(function (res) {
       if (res.errno === 0) {
         wx.redirectTo({
-          url: '/pages/pay/pay?orderId=' + res.data.orderInfo.id + '&actualPrice=' + res.data.orderInfo.actual_price
+          url: '/pages/pay/pay?order_id=' + res.data.orderInfo.id + '&actual_price=' + res.data.orderInfo.actual_price
         })
 
       } else {
