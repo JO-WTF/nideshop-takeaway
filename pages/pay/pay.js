@@ -50,6 +50,19 @@ Page({
         });
       }
     });
+
+			//发送订单通知
+			util.request(api.NotifyShop, { orderId: that.data.orderId, payType: that.data.payType  }).then(function (res) {
+	      if (res.errno === 0) {
+					console.log(res);
+	      }else{
+	        console.log(res);
+	      }
+	    });
+			wx.redirectTo({
+				url: '/pages/payResult/payResult?status=2&order_id='+that.data.orderID,
+			})
+			
   },
   radioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)
@@ -92,6 +105,14 @@ Page({
 		if (that.data.payType>1){
     	this.requestPayParam();
 		}else{
+			//发送订单通知
+			util.request(api.NotifyShop, { orderId: that.data.orderId, payType: that.data.payType  }).then(function (res) {
+	      if (res.errno === 0) {
+					console.log(res);
+	      }else{
+	        console.log(res);
+	      }
+	    });
 			wx.redirectTo({
 				url: '/pages/payResult/payResult?status=2&order_id='+that.data.orderID,
 			})
