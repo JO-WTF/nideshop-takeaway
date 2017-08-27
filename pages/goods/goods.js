@@ -284,7 +284,6 @@ Page({
         });
         return false;
       }
-      console.log("key",this.getCheckedSpecKey(),"end")
       //根据选中的规格，判断是否有对应的sku信息
       let checkedProduct = this.getCheckedProductItem(this.getCheckedSpecKey());
       if (!checkedProduct || checkedProduct.length <= 0) {

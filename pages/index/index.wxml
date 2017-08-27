@@ -11,7 +11,7 @@
   <view class="search">
     <navigator url="/pages/search/search" class="input">
       <image class="icon"></image>
-      <text class="txt">搜索, 共{{goodsCount}}款菜品</text>
+      <text class="txt">搜索, 共{{goodsCount}}款好菜</text>
     </navigator>
   </view>
   <view class="m-menu">
